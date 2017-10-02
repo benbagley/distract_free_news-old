@@ -35,4 +35,11 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$container['services'] = function () {
+  return new App\Services\ServiceFactory(
+    new GuzzleHttp\Client
+  );
+};
+
 require_once __DIR__ . '/../routes/web.php';
+require_once __DIR__ . '/../routes/api.php';
