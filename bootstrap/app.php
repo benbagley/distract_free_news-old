@@ -18,6 +18,15 @@ $app = new Slim\App([
 
         'views' => [
             'cache' => getenv('VIEW_CACHE_DISABLED') === 'true' ? false : __DIR__ . '/../storage/views'
+        ],
+
+        'database' => [
+          'redis' => [
+            'scheme'    => getenv('REDIS_SCHEME'),
+            'host'      => getenv('REDIS_HOST'),
+            'port'      => getenv('REDIS_PORT'),
+            'password'  => getenv('REDIS_PASSWORD') ?: null
+          ]
         ]
     ],
 ]);
@@ -39,6 +48,19 @@ $container['services'] = function () {
   return new App\Services\ServiceFactory(
     new GuzzleHttp\Client
   );
+};
+
+$container['cache'] = function($container) {
+  $settings = $container['settings']['database']['redis'];
+
+  $client = new Predis\Client([
+    'scheme'    => $settings['scheme'],
+    'host'      => $settings['host'],
+    'port'      => $settings['port'],
+    'password'  => $settings['password']
+  ]);
+
+  return new App\Cache\RedisAdapter($client);
 };
 
 require_once __DIR__ . '/../routes/web.php';

@@ -12,6 +12,14 @@ class HomeController extends Controller
 {
     public function index(Request $request, Response $response, $args)
     {
+      $name = $this->c->cache->remember('name', 1, function() {
+        sleep(10);
+        return 'Ben Bagley';
+      });
+
+      dump($name);
+      die();
+
         return $this->c->view->render($response, 'home/index.twig', [
             'appName' => $this->c->settings['app']['name'],
         ]);
