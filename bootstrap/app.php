@@ -44,12 +44,6 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-$container['services'] = function () {
-  return new App\Services\ServiceFactory(
-    new GuzzleHttp\Client
-  );
-};
-
 $container['cache'] = function($container) {
   $settings = $container['settings']['database']['redis'];
 
@@ -61,6 +55,13 @@ $container['cache'] = function($container) {
   ]);
 
   return new App\Cache\RedisAdapter($client);
+};
+
+$container['services'] = function ($container) {
+  return new App\Services\ServiceFactory(
+    new GuzzleHttp\Client,
+    $container->get('cache')
+  );
 };
 
 require_once __DIR__ . '/../routes/web.php';
