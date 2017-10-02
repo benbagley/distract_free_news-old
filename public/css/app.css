@@ -1,0 +1,7 @@
+* { box-sizing: border-box; }
+
+html, body {
+  font-family: 'Playfair Display', serif;
+  background: yellow;
+  margin: 60px;
+}
