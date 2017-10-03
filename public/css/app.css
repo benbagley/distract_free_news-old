@@ -62,7 +62,7 @@ a {
 /* Navigation */
 nav a { margin-right: 20px; }
 
-nav a:nth-child(3) { margin-right: 0; }
+nav a:nth-last-child() { margin-right: 0; }
 
 /* Home */
 h2.logo { font-size: 3em; }

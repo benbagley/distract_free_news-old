@@ -4,9 +4,11 @@ namespace App\Services;
 
 use App\Cache\RedisAdapter;
 use App\Services\HackerNews;
-use App\Services\Transformers\ProductHuntTransformer;
 use App\Services\Transformers\HackerNewsTransformer;
 use App\Services\Transformers\RedditTransformer;
+use App\Services\Transformers\ProductHuntTransformer;
+use App\Services\Transformers\bbcNewsTransformer;
+use App\Services\Transformers\TheTelegraphTransformer;
 use GuzzleHttp\Client as Guzzle;
 
 class ServiceFactory
@@ -15,9 +17,11 @@ class ServiceFactory
   protected $cache;
 
   protected $enabledServices = [
-    'producthunt',
     'hackernews',
     'reddit',
+    'producthunt',
+    'bbcnews',
+    'thetelegraph',
   ];
 
   public function __construct(Guzzle $client, RedisAdapter $cache)
@@ -62,6 +66,24 @@ class ServiceFactory
     });
 
     return (new ProductHuntTransformer(json_decode($data)))->create();
+  }
+
+  protected function bbcnews($limit = 10)
+  {
+    $data = $this->cache->remember('bbcnews', 10, function () use ($limit) {
+      return json_encode($data = (new bbcNews($this->client))->get($limit));
+    });
+
+    return (new bbcNewsTransformer(json_decode($data)))->create();
+  }
+
+  protected function thetelegraph($limit = 10)
+  {
+    $data = $this->cache->remember('thetelegraph', 10, function () use ($limit) {
+      return json_encode($data = (new TheTelegraph($this->client))->get($limit));
+    });
+
+    return (new TheTelegraphTransformer(json_decode($data)))->create();
   }
 
   protected function serviceIsEnabled($service)
