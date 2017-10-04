@@ -13,7 +13,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "nesbot/carbon": "^1.22",
         "predis/predis": "^1.1",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "slim/csrf": "^0.8.1"
     },
     "autoload": {
         "psr-4": {

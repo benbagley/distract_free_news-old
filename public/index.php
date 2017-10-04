@@ -13,4 +13,5 @@ if (PHP_SAPI == 'cli-server') {
     }
 }
 
+$app->add($container->get('csrf'));
 $app->run();

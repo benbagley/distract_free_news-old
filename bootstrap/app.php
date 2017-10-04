@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 try {
@@ -33,6 +35,11 @@ $app = new Slim\App([
 
 $container = $app->getContainer();
 
+$container['csrf'] = function ($container) {
+  return new \Slim\Csrf\Guard;
+};
+
+
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
         'cache' => $container->settings['views']['cache']
@@ -40,6 +47,7 @@ $container['view'] = function ($container) {
 
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+    $view->addExtension(new App\Views\CsrfExtension($container['csrf']));
 
     return $view;
 };
