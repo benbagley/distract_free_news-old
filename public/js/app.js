@@ -7,7 +7,9 @@ var app = new Vue({
   },
   methods: {
     load (service) {
-      this.loading = true
+      this.loading = true,
+
+      axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf_name"]').getAttribute('content');
 
       axios.get('/api/news/' + service).then((response) => {
         this.items = response.data
