@@ -9,6 +9,7 @@ use App\Services\Transformers\RedditTransformer;
 use App\Services\Transformers\ProductHuntTransformer;
 use App\Services\Transformers\bbcNewsTransformer;
 use App\Services\Transformers\TheTelegraphTransformer;
+use App\Services\Transformers\TheIndependentTransformer;
 use GuzzleHttp\Client as Guzzle;
 
 class ServiceFactory
@@ -22,6 +23,7 @@ class ServiceFactory
     'producthunt',
     'bbcnews',
     'thetelegraph',
+    'theindependent',
   ];
 
   public function __construct(Guzzle $client, RedisAdapter $cache)
@@ -84,6 +86,15 @@ class ServiceFactory
     });
 
     return (new TheTelegraphTransformer(json_decode($data)))->create();
+  }
+
+  protected function theindependent($limit = 10)
+  {
+    $data = $this->cache->remember('theindependent', 10, function () use ($limit) {
+      return json_encode($data = (new TheIndependent($this->client))->get($limit));
+    });
+
+    return (new TheIndependentTransformer(json_decode($data)))->create();
   }
 
   protected function serviceIsEnabled($service)
