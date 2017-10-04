@@ -1,8 +1,20 @@
 <nav>
-  <a href="#" @click.prevent="load('hackernews')">Hacker News</a>
-  <a href="#" @click.prevent="load('reddit')">Reddit</a>
-  <a href="#" @click.prevent="load('producthunt')">Product Hunt</a>
-  <a href="#" @click.prevent="load('bbcnews')">BBC News</a>
-  <a href="#" @click.prevent="load('thetelegraph')">The Telegraph</a>
-  <a href="#" @click.prevent="load('theindependent')">The Independent</a>
+  <section class="container">
+    <section class="logo left">
+      <a href="/">Distract Free News</a>  
+    </section>
+
+    <section class="bars right">
+      <i class="fa fa-bars"></i>
+    </section>
+
+    <section class="mobile-nav right">
+      <a href="#" @click.prevent="load('hackernews')" class="hackernews">Hacker News</a>
+      <a href="#" @click.prevent="load('reddit')" class="reddit">Reddit</a>
+      <a href="#" @click.prevent="load('producthunt')" class="producthunt">Product Hunt</a>
+      <a href="#" @click.prevent="load('bbcnews')" class="bbcnews">BBC News</a>
+      <a href="#" @click.prevent="load('thetelegraph')" class="thetelegraph">The Telegraph</a>
+      <a href="#" @click.prevent="load('theindependent')" class="theindependent">The Independent</a>
+    </section>
+  </section>
 </nav>

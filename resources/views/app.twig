@@ -9,16 +9,16 @@
 </head>
 <body>
   <section id="app">
-      <section class="container">
-      <h2 class="logo">Distract Free News</h2>
-      {% include 'partials/_navigation.twig' %}
+    {% include 'partials/_navigation.twig' %}
 
+    <section class="container">
       <section class="content">
         {% block content %}{% endblock %}
       </section>
     </section>
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
   <script src="{{ base_url() }}/js/vue.min.js"></script>
   <script src="https://use.fontawesome.com/1b21219bb9.js"></script>

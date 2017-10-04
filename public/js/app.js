@@ -21,3 +21,20 @@ var app = new Vue({
     this.load('hackernews')
   }
 })
+
+$(document).ready(function(){
+  // click functionality.
+  $(".bars").click(function(){
+    if($(".mobile-nav").hasClass("opened")){
+      // If the nav is shown, then close it...
+      $(".mobile-nav").slideToggle(400, function(){
+        $(".mobile-nav").removeClass("opened");
+      })
+    } else {
+      // otherwise if the nav is closed, open it.
+      $(".mobile-nav").slideToggle(400, function(){
+        $(".mobile-nav").addClass("opened");
+      });
+    } // close if-statement
+  });
+});
