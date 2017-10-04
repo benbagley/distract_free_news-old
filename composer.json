@@ -12,7 +12,8 @@
         "vlucas/phpdotenv": "^2.4",
         "guzzlehttp/guzzle": "^6.3",
         "nesbot/carbon": "^1.22",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "ext-gd": "*"
     },
     "autoload": {
         "psr-4": {
