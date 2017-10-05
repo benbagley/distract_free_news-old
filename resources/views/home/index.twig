@@ -9,15 +9,16 @@
     <img :src="item.image">
 
     <h3 class="item__title">
-      <a :href="item.link" target="_blank">${ item.title }</a>
+      <a :href="item.link" target="_blank">
+        <h3>${ item.title }</h3>
+      </a>
     </h3>
 
     <section class="item__service">
         <p>
           Source: ${ item.service }
           {% if item.author %}
-            |
-            Author: ${ item.author }
+            | Author: ${ item.author }
           {% endif %}
         </p>
     </section>

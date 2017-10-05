@@ -10,7 +10,7 @@ class TheIndependentTransformer extends TransformerAbstract
   {
     return [
       'title'     => $payload->title,
-      'image' => $payload->urlToImage,
+      'image'     => $payload->urlToImage,
       'content'   => $payload->description,
       'author'    => $payload->author,
       'link'      => $payload->url,

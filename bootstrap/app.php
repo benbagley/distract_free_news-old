@@ -12,7 +12,7 @@ try {
 
 $app = new Slim\App([
     'settings' => [
-        'displayErrorDetails' => getenv('APP_DEBUG') === 'false',
+        'displayErrorDetails' => getenv('APP_DEBUG') === 'true',
 
         'app' => [
             'name' => getenv('APP_NAME')
@@ -38,7 +38,6 @@ $container = $app->getContainer();
 $container['csrf'] = function ($container) {
   return new \Slim\Csrf\Guard;
 };
-
 
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [

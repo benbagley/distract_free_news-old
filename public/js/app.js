@@ -18,7 +18,7 @@ var app = new Vue({
     }
   },
   mounted () {
-    this.load('hackernews')
+    this.load('bbcnews')
   }
 })
 
@@ -36,5 +36,10 @@ $(document).ready(function(){
         $(".mobile-nav").addClass("opened");
       });
     } // close if-statement
+  });
+
+  $('.more').click(function(e) {
+    e.stopPropagation();
+    $('.dropdown').toggleClass('opened');
   });
 });

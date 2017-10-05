@@ -9,12 +9,19 @@
     </section>
 
     <section class="mobile-nav right">
-      <a href="#" @click.prevent="load('hackernews')" class="hackernews">Hacker News</a>
-      <a href="#" @click.prevent="load('reddit')" class="reddit">Reddit</a>
-      <a href="#" @click.prevent="load('producthunt')" class="producthunt">Product Hunt</a>
       <a href="#" @click.prevent="load('bbcnews')" class="bbcnews">BBC News</a>
       <a href="#" @click.prevent="load('thetelegraph')" class="thetelegraph">The Telegraph</a>
       <a href="#" @click.prevent="load('theindependent')" class="theindependent">The Independent</a>
+
+      <section class="more">
+        <a href="#">More <i class="fa fa-caret-down"></i></a>
+        
+        <section class="dropdown">
+          <a href="#" @click.prevent="load('hackernews')" class="hackernews">Hacker News</a>
+          <a href="#" @click.prevent="load('reddit')" class="reddit">Reddit</a>
+          <a href="#" @click.prevent="load('producthunt')" class="producthunt">Product Hunt</a>
+        </section>
+      </section>
     </section>
   </section>
 </nav>

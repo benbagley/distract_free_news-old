@@ -58,14 +58,15 @@ img {
 }
 
 .title {
-  text-align: center;
+  text-align: left;
+  font-weight: 400;
   padding: 40px 0;
   margin: 0;
 }
 
 /* Navigation */
 nav {
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 2px solid #f0f5f9;
   background: white;
   position: fixed;
   z-index: 999;
@@ -82,20 +83,47 @@ nav a {
   transition: all .1s ease-in-out;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 400; 
   padding: 28px 10px;
+  font-weight: 400;
   font-size: 12px;
 }
 
-nav a:nth-last-child() { margin-right: 0; }
-nav a:hover { color: white; }
+nav a:hover {
+  padding-bottom: 27px;
+}
 
-nav .theindependent:hover { background: #EA182A; }
-nav .thetelegraph:hover { background: #EEE6DA; }
-nav .producthunt:hover { background: #D54B29; }
-nav .hackernews:hover { background: #FF5A00; }
-nav .bbcnews:hover { background: #B31718; }
-nav .reddit:hover { background: #C7DFF7; }
+nav a:nth-last-child() { margin-right: 0; }
+
+nav .theindependent:hover { border-bottom: 2px solid #EA182A; }
+nav .thetelegraph:hover { border-bottom: 2px solid #EEE6DA; }
+nav .producthunt:hover { border-bottom: 2px solid #D54B29; }
+nav .hackernews:hover { border-bottom: 2px solid #FF5A00; }
+nav .bbcnews:hover { border-bottom: 2px solid #B31718; }
+nav .reddit:hover { border-bottom: 2px solid #C7DFF7; }
+
+nav .more { display: inline-block; }
+nav .more .dropdown { display: none; }
+
+nav .dropdown.opened {
+  border: 2px solid #f0f5f9;
+  position: absolute;
+  background: white;
+  margin-top: 1.5vh;
+  margin-left: .6vw;
+  display: block;
+  width: 170px;
+}
+
+nav .dropdown.opened a {
+  padding: 11px 23px;
+  text-align: left;
+  line-height: 3;
+  width: 100%;
+}
+
+nav .dropdown.opened a:hover {
+  border: 0;
+}
 
 nav .mobile-nav.opened {
   position: absolute;
@@ -107,8 +135,9 @@ nav .mobile-nav.opened {
 }
 
 nav .mobile-nav.opened a {
+  position: relative;
   text-align: center;
-  padding-top: 25px;
+  padding: 15px 0;
   display: block;
 }
 
@@ -118,25 +147,30 @@ nav .mobile-nav.opened a {
 }
 
 /* Home */
-h2.logo { font-size: 3em; }
 .content { padding-top: 7vh; }
+.item { margin-bottom: 3vh; }
 
-.item { margin-bottom: 1vh; }
-
-.item__title {
-  margin-bottom: .5vh;
-  font-weight: 400;
-  font-size: 1em;
+.item--with-image {
+  width: 100%;
 }
 
-.item__service {
-  font-size: .8em;
-  color: #ccc;
+@media (min-width: 700px) {
+  .item--with-image {
+    padding: 0 10px 40px 10px;
+    margin-bottom: 0;
+    float: left;
+  }
 }
 
-.item__content {
+.item__service p {
+  margin-top: -1em;
+  font-size: .75em;
+  color: #38414f;
+}
+
+.item__content p {
   margin-top: 1.4vh;
-  font-size: 1em;
+  font-size: .8em;
 }
 
 .loading { font-size: .9em;  }
