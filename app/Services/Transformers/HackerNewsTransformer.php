@@ -8,6 +8,9 @@ class HackerNewsTransformer extends TransformerAbstract
   {
     return [
       'title'     => $payload->title,
+      'image'     => null,
+      'content'   => null,
+      'author'    => null,
       'link'      => isset($payload->url) ? $payload->url : 'https://news.ycombinator.com/item?id=' . $payload->id,
       'timestamp' => $payload->time,
       'service'   => 'Hacker News'

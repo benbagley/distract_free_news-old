@@ -53,7 +53,7 @@ a {
 }
 
 img {
-  max-width: 100%;
+  max-width: 40%;
   margin: 0 auto;
 }
 
@@ -150,16 +150,13 @@ nav .mobile-nav.opened a {
 .content { padding-top: 7vh; }
 .item { margin-bottom: 3vh; }
 
-.item--with-image {
-  width: 100%;
+.item__title {
+  margin-bottom: .4vh;
 }
 
-@media (min-width: 700px) {
-  .item--with-image {
-    padding: 0 10px 40px 10px;
-    margin-bottom: 0;
-    float: left;
-  }
+.item__service,
+.item__author {
+  display: inline-block;
 }
 
 .item__service p {
