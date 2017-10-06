@@ -4,6 +4,7 @@
 html,
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  overflow-x: hidden;
   font-weight: 400;
   height: 100vh;
   margin: 0;
@@ -21,12 +22,16 @@ body {
 .left { float: left; }
 
 .container {
-  padding: 25px 20px 45px 20px;
+  padding: 12vh 0;
   margin: 0 auto;
+  width: 95vw;
 }
 
 @media (min-width: 700px) {
-  .container { padding: 25px 120px 45px 120px; }
+  .container {
+    margin-left: 18vw;
+    padding: 0;
+  }
 }
 
 h1,
@@ -43,7 +48,7 @@ a {
 p, a {
   letter-spacing: .1rem;
   line-height: 1.7;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 auto;
 }
 
@@ -55,7 +60,10 @@ a {
 img {
   max-width: 100%;
   margin: 0 auto;
-  height: 250px;
+}
+
+@media (min-width: 700px) {
+  img { max-width: 51%; }
 }
 
 .title {
@@ -67,70 +75,47 @@ img {
 
 /* Navigation */
 nav {
-  border-bottom: 2px solid #f0f5f9;
-  background: white;
+  border-bottom: 2px solid #dce1e5;
+  background: #f0f5f9;
   position: fixed;
   z-index: 999;
   width: 100vw;
 }
 
-nav .right {
-  display: none;
+nav .logo {
+  padding: 3vh 5vw;
+  float: left;
 }
 
-nav .bars.right { display: block; }
+nav .mobile-nav { display: none; }
+
+nav .bars {
+  padding: 3.2vh 5vw;
+  display: block;
+  float: right;
+}
 
 nav a {
   transition: all .1s ease-in-out;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 28px 10px;
+  text-align: center;
   font-weight: 400;
-  font-size: 12px;
+  padding: 2vh 0;
 }
 
-nav a:hover {
-  padding-bottom: 27px;
-}
+nav .mobile-nav a:hover { color: white; }
 
-nav a:nth-last-child() { margin-right: 0; }
-
-nav .theindependent:hover { border-bottom: 2px solid #EA182A; }
-nav .thetelegraph:hover { border-bottom: 2px solid #EEE6DA; }
-nav .producthunt:hover { border-bottom: 2px solid #D54B29; }
-nav .hackernews:hover { border-bottom: 2px solid #FF5A00; }
-nav .bbcnews:hover { border-bottom: 2px solid #B31718; }
-nav .reddit:hover { border-bottom: 2px solid #C7DFF7; }
-
-nav .more { display: inline-block; }
-nav .more .dropdown { display: none; }
-
-nav .dropdown.opened {
-  border: 2px solid #f0f5f9;
-  position: absolute;
-  background: white;
-  margin-top: 1.5vh;
-  margin-left: .6vw;
-  display: block;
-  width: 170px;
-}
-
-nav .dropdown.opened a {
-  padding: 11px 23px;
-  text-align: left;
-  line-height: 3;
-  width: 100%;
-}
-
-nav .dropdown.opened a:hover {
-  border: 0;
-}
+nav .theindependent:hover { background: #EA182A; }
+nav .thetelegraph:hover { background: #EEE6DA; }
+nav .producthunt:hover { background: #D54B29; }
+nav .hackernews:hover { background: #FF5A00; }
+nav .bbcnews:hover { background: #B31718; }
+nav .reddit:hover { background: #C7DFF7; }
 
 nav .mobile-nav.opened {
   position: absolute;
-  background: white;
+  background: inherit;
   min-height: 100vh;
-  margin-top: 46px;
+  margin-top: 9.8vh;
   width: 100vw;
   left: 0;
 }
@@ -143,24 +128,28 @@ nav .mobile-nav.opened a {
 }
 
 @media (min-width: 700px) {
-  nav .right { display: block; }
-  nav .bars.right { display: none; }
+  nav .bars { display: none; }
+
+  nav {
+    border-right: 2px solid #dce1e5;
+    height: 100vh;
+    width: 15vw;
+  }
+
+  nav .logo {
+    text-align: center;
+    float: inherit;
+    padding: 3vh 0;
+  }
+
+  nav .mobile-nav { display: block; }
+  nav .mobile-nav a { display: block; }
 }
 
 /* Home */
-.item { margin-top: 9vh; }
-
-.item__title {
-  margin-bottom: .4vh;
-}
-
-@media (min-width: 700px) {
-  .grid__col {
-    margin-bottom: 6vh;
-    margin-right: 0;
-    float: left;
-  }
-}
+.item__title { margin-bottom: .4vh; }
+.item { margin-bottom: 4vh; }
+.loading { font-size: .9em;  }
 
 .item__service,
 .item__author {
@@ -168,7 +157,7 @@ nav .mobile-nav.opened a {
 }
 
 .item__service p {
-  margin-top: -1em;
+  margin-top: -1vh;
   font-size: .75em;
   color: #38414f;
 }
@@ -178,4 +167,7 @@ nav .mobile-nav.opened a {
   font-size: .8em;
 }
 
-.loading { font-size: .9em;  }
+@media (min-width: 700px) {
+  .item { margin-bottom: 2vh; }
+  .item__content { width: 65vw; }
+}
