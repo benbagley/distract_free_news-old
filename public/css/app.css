@@ -169,5 +169,5 @@ nav .mobile-nav.opened a {
 
 @media (min-width: 700px) {
   .item { margin-bottom: 2vh; }
-  .item__content { width: 65vw; }
+  .item__content { width: 50vw; }
 }
