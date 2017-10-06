@@ -4,7 +4,7 @@ namespace App\Services;
 
 class HackerNews extends ServiceAbstract
 {
-  public function get($limit = 10)
+  public function get($limit = 12)
   {
     $response = $this->client->request('GET', 'https://hacker-news.firebaseio.com/v0/topstories.json');
     $ids = array_slice(json_decode($response->getBody()), 0, $limit);

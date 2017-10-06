@@ -4,7 +4,7 @@ namespace App\Services;
 
 class Reddit extends ServiceAbstract
 {
-  public function get($limit = 10)
+  public function get($limit = 12)
   {
     $response = $this->client->request('GET', 'https://www.reddit.com/r/popular.json?limit=' . $limit, [
       'headers' => ['User-Agent' => getenv('APP_NAME')]

@@ -4,7 +4,7 @@ namespace App\Services;
 
 class ProductHunt extends ServiceAbstract
 {
-  public function get($limit = 10)
+  public function get($limit = 12)
   {
     $response = $this->client->request('GET', 'https://api.producthunt.com/v1/posts?access_token=' . getenv('PRODUCT_HUNT'));
 

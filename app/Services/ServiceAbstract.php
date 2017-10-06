@@ -13,5 +13,5 @@ abstract class ServiceAbstract
     $this->client = $client;
   }
 
-  abstract public function get($limit = 10);
+  abstract public function get($limit = 12);
 }

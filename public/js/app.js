@@ -1,3 +1,13 @@
+Vue.filter('truncate', function(value, length) {
+  if(value.length < length) {
+    return value;
+  }
+
+  length = length - 3;
+
+  return value.substring(0, length) + '...';
+});
+
 var app = new Vue({
   el: '#app',
   delimiters: ['${', '}'],
@@ -20,7 +30,7 @@ var app = new Vue({
   mounted () {
     this.load('bbcnews')
   }
-})
+});
 
 $(document).ready(function(){
   // click functionality.

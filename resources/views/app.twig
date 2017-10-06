@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   {{ csrf_field() | raw }}
   <title>Distract Free News</title>
-  <link href="{{ base_url() }}/css/app.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toast-css/1.1.0/grid.min.css" rel="stylesheet">
+  <link href="{{ base_url() }}/css/app.css" rel="stylesheet">
 </head>
 <body>
   <section id="app">
     {% include 'partials/_navigation.twig' %}
 
-    <section class="container">
-      <section class="content">
-        {% block content %}{% endblock %}
-      </section>
+    <section class="container grid">
+      {% block content %}{% endblock %}
     </section>
   </section>
 

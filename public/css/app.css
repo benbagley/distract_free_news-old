@@ -53,8 +53,9 @@ a {
 }
 
 img {
-  max-width: 40%;
+  max-width: 100%;
   margin: 0 auto;
+  height: 250px;
 }
 
 .title {
@@ -147,11 +148,18 @@ nav .mobile-nav.opened a {
 }
 
 /* Home */
-.content { padding-top: 7vh; }
-.item { margin-bottom: 3vh; }
+.item { margin-top: 9vh; }
 
 .item__title {
   margin-bottom: .4vh;
+}
+
+@media (min-width: 700px) {
+  .grid__col {
+    padding-bottom: 2vh;
+    margin-right: 0;
+    float: left;
+  }
 }
 
 .item__service,
@@ -166,7 +174,7 @@ nav .mobile-nav.opened a {
 }
 
 .item__content p {
-  margin-top: 1.4vh;
+  margin-top: 1.6vh;
   font-size: .8em;
 }
 
