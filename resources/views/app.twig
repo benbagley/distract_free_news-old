@@ -17,15 +17,20 @@
     </section>
   </section>
 
-  <script type="text/javascript">
-    function createKeenWebAutoCollector(){window.keenWebAutoCollector=window.KeenWebAutoCollector.create({projectId:'59d80f2bc9e77c0001097058',writeKey:'E403B0261B8C9402F1174D0F8A0922A9B9B1A153EBB9820193741DB673EA8DAD15F52223F06AA5A86E3144611631F63359AB19A68EB20A9D680A4A7FF3017950DC6C4C481864EB2B078A4D350DB8FB0ED355DCB3D04798EC34108F33F205792D',onloadCallbacks:window.keenWebAutoCollector.onloadCallbacks}),window.keenWebAutoCollector.loaded()}function initKeenWebAutoCollector(){window.keenWebAutoCollector.domReady()?window.createKeenWebAutoCollector():document.addEventListener("readystatechange",function(){window.keenWebAutoCollector.domReady()&&window.createKeenWebAutoCollector()})}window.keenWebAutoCollector={onloadCallbacks:[],onload:function(a){this.onloadCallbacks.push(a)},domReady:function(){return["ready","complete"].indexOf(document.readyState)>-1}};
-  </script>
-  <script async type="text/javascript" src="https://d26b395fwzu5fz.cloudfront.net/keen-web-autocollector-1.0.8.min.js" onload="initKeenWebAutoCollector()"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
   <script src="{{ base_url() }}/js/vue.min.js"></script>
   <script src="https://use.fontawesome.com/1b21219bb9.js"></script>
   <script src="{{ base_url() }}/js/app.js"></script>
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107701988-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107701988-1');
+  </script>
 </body>
 </html>
