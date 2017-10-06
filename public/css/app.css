@@ -156,7 +156,7 @@ nav .mobile-nav.opened a {
 
 @media (min-width: 700px) {
   .grid__col {
-    padding-bottom: 2vh;
+    margin-bottom: 6vh;
     margin-right: 0;
     float: left;
   }

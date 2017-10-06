@@ -6,8 +6,8 @@
     One Moment
   </section>
 
-  <section class="item" v-for="item in items" v-else> <!-- start vue -->
-    <section class="grid__col grid__col--1-of-3">
+  <section class="grid item" v-for="item in items" v-else> <!-- start vue -->
+    <section class="grid__col grid__col--1-of-4">
       <img :src="item.image" :alt="item.service" v-if="item.image !== null">
 
       <h3 class="item__title">
