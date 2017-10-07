@@ -15,7 +15,9 @@ class bbcNewsTransformer extends TransformerAbstract
       'author'    => null,
       'link'      => $payload->url,
       'timestamp' => Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
-      'service'   => 'BBC News'
+      'service'   => 'BBC News',
+
+      'subreddit' => null,
     ];
   }
 }

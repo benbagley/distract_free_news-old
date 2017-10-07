@@ -154,13 +154,17 @@ nav .mobile-nav.opened a {
 .loading { font-size: .9em;  }
 
 .item__service,
-.item__author {
+.item__author,
+.item__reddit {
   display: inline-block;
 }
 
-.item__service p {
+.item__service p,
+.item__author p,
+.item__reddit p,
+.item__reddit a {
   margin-top: -1vh;
-  font-size: .75em;
+  font-size: .8em;
   color: #38414f;
 }
 

@@ -15,7 +15,9 @@ class bbcSportTransformer extends TransformerAbstract
       'author'    => null,
       'link'      => $payload->url,
       'timestamp' => Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
-      'service'   => 'BBC Sport'
+      'service'   => 'BBC Sport',
+
+      'subreddit' => null
     ];
   }
 }

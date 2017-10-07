@@ -22,6 +22,10 @@
       <p>| Author: ${ item.author }</p>
     </section>
 
+    <section class="item__reddit" v-if="item.subreddit !== null">
+      <p>| Subreddit: <a :href="item.subreddit_link" target="_blank">${ item.subreddit }</a></p>
+    </section>
+
     <section class="item__content" v-if="item.content !== null">
       <p>${ item.content }</p>
     </section>
