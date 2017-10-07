@@ -14,7 +14,7 @@ class TheTelegraphTransformer extends TransformerAbstract
       'content'   => $payload->description,
       'author'    => null,
       'link'      => $payload->url,
-      'timestamp' =>  Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
+      'timestamp' => Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
       'service'   => 'The Telegraph'
     ];
   }

@@ -14,7 +14,7 @@ class ProductHuntTransformer extends TransformerAbstract
       'content'   => null,
       'author'    => null,
       'link'      => $payload->discussion_url,
-      'timestamp' =>  Carbon::parse($payload->created_at, 'UTC')->getTimestamp(),
+      'timestamp' => Carbon::parse($payload->created_at, 'UTC')->getTimestamp(),
       'service'   => 'ProductHunt'
     ];
   }

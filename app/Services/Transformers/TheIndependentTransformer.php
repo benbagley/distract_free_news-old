@@ -14,7 +14,7 @@ class TheIndependentTransformer extends TransformerAbstract
       'content'   => $payload->description,
       'author'    => $payload->author,
       'link'      => $payload->url,
-      'timestamp' =>  Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
+      'timestamp' => Carbon::parse($payload->publishedAt, 'UTC')->getTimestamp(),
       'service'   => 'The Independent'
     ];
   }
