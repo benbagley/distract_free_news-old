@@ -63,7 +63,7 @@ img {
 }
 
 @media (min-width: 700px) {
-  img { max-width: 43vw; }
+  img { max-width: 33vw; }
 }
 
 .title {
