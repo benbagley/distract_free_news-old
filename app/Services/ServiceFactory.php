@@ -8,6 +8,7 @@ use App\Services\Transformers\HackerNewsTransformer;
 use App\Services\Transformers\RedditTransformer;
 use App\Services\Transformers\ProductHuntTransformer;
 use App\Services\Transformers\bbcNewsTransformer;
+use App\Services\Transformers\bbcSportTransformer;
 use App\Services\Transformers\TheTelegraphTransformer;
 use App\Services\Transformers\TheIndependentTransformer;
 use GuzzleHttp\Client as Guzzle;
@@ -22,6 +23,7 @@ class ServiceFactory
     'reddit',
     'producthunt',
     'bbcnews',
+    'bbcsport',
     'thetelegraph',
     'theindependent',
   ];
@@ -77,6 +79,15 @@ class ServiceFactory
     });
 
     return (new bbcNewsTransformer(json_decode($data)))->create();
+  }
+
+  protected function bbcsport($limit = 20)
+  {
+    $data = $this->cache->remember('bbcsport', 10, function () use ($limit) {
+      return json_encode($data = (new bbcSport($this->client))->get($limit));
+    });
+
+    return (new bbcSportTransformer(json_decode($data)))->create();
   }
 
   protected function thetelegraph($limit = 20)

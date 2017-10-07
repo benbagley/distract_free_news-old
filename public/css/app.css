@@ -63,7 +63,7 @@ img {
 }
 
 @media (min-width: 700px) {
-  img { max-width: 51%; }
+  img { max-width: 43vw; }
 }
 
 .title {
@@ -109,6 +109,7 @@ nav .theindependent:hover { background: #EA182A; }
 nav .thetelegraph:hover { background: #EEE6DA; }
 nav .producthunt:hover { background: #D54B29; }
 nav .hackernews:hover { background: #FF5A00; }
+nav .bbcsport:hover { background: #FFCB2B; }
 nav .bbcnews:hover { background: #B31718; }
 nav .reddit:hover { background: #C7DFF7; }
 
@@ -172,5 +173,5 @@ nav .mobile-nav.opened a {
   .item { margin-bottom: 2vh; }
   
   .item__title,
-  .item__content { width: 50vw; }
+  .item__content { width: 43vw; }
 }
