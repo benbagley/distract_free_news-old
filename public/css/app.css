@@ -105,28 +105,28 @@ nav a {
   padding: 2vh 0;
 }
 
-nav .mobile-nav a:focus,
+nav .mobile-nav a.active,
 nav .mobile-nav a:hover { color: white; }
 
-nav .theindependent:focus,
+nav .theindependent.active,
 nav .theindependent:hover { background: #EA182A; }
 
-nav .thetelegraph:focus,
+nav .thetelegraph.active,
 nav .thetelegraph:hover { background: #EEE6DA; }
 
-nav .producthunt:focus,
+nav .producthunt.active,
 nav .producthunt:hover { background: #D54B29; }
 
-nav .hackernews:focus,
+nav .hackernews.active,
 nav .hackernews:hover { background: #FF5A00; }
 
-nav .bbcsport:focus,
+nav .bbcsport.active,
 nav .bbcsport:hover { background: #FFCB2B; }
 
-nav .bbcnews:focus,
+nav .bbcnews.active,
 nav .bbcnews:hover { background: #B31718; }
 
-nav .reddit:focus,
+nav .reddit.active,
 nav .reddit:hover { background: #C7DFF7; }
 
 

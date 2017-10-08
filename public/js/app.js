@@ -8,12 +8,6 @@ Vue.filter('truncate', function(value, length) {
   return value.substring(0, length) + '...';
 });
 
-Vue.directive('focus', {
-  inserted: function (el) {
-    el.focus()
-  }
-});
-
 var app = new Vue({
   el: '#app',
   delimiters: ['${', '}'],
@@ -54,8 +48,8 @@ $(document).ready(function(){
     } // close if-statement
   });
 
-  $('.more').click(function(e) {
-    e.stopPropagation();
-    $('.dropdown').toggleClass('opened');
+  $('nav a').on('click', function() {
+    $('nav a').removeClass('active');
+    $(this).toggleClass('active');
   });
 });
