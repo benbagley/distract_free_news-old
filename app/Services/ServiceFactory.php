@@ -11,6 +11,7 @@ use App\Services\Transformers\bbcNewsTransformer;
 use App\Services\Transformers\bbcSportTransformer;
 use App\Services\Transformers\TheTelegraphTransformer;
 use App\Services\Transformers\TheIndependentTransformer;
+use App\Services\Transformers\LadBibleTransformer;
 use GuzzleHttp\Client as Guzzle;
 
 class ServiceFactory
@@ -26,6 +27,7 @@ class ServiceFactory
     'bbcsport',
     'thetelegraph',
     'theindependent',
+    'ladbible',
   ];
 
   public function __construct(Guzzle $client, RedisAdapter $cache)
@@ -106,6 +108,15 @@ class ServiceFactory
     });
 
     return (new TheIndependentTransformer(json_decode($data)))->create();
+  }
+
+  protected function ladbible($limit = 20)
+  {
+    $data = $this->cache->remember('ladbible', 10, function () use ($limit) {
+      return json_encode($data = (new LadBible($this->client))->get($limit));
+    });
+
+    return (new LadBibleTransformer(json_decode($data)))->create();
   }
 
   protected function serviceIsEnabled($service)

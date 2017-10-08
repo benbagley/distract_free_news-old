@@ -111,6 +111,9 @@ nav .mobile-nav a:hover { color: white; }
 nav .theindependent.active,
 nav .theindependent:hover { background: #EA182A; }
 
+nav .ladbible.active,
+nav .ladbible:hover { background: #000000; }
+
 nav .thetelegraph.active,
 nav .thetelegraph:hover { background: #EEE6DA; }
 
