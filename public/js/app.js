@@ -8,6 +8,12 @@ Vue.filter('truncate', function(value, length) {
   return value.substring(0, length) + '...';
 });
 
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+});
+
 var app = new Vue({
   el: '#app',
   delimiters: ['${', '}'],

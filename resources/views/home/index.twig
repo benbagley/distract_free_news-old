@@ -14,16 +14,12 @@
       </a>
     </h3>
 
-    <section class="item__service">
-      <p>Source: ${ item.service }</p>
-    </section>
-
     <section class="item__author" v-if="item.author !== null">
-      <p>| Author: ${ item.author }</p>
+      <p>Author: ${ item.author }</p>
     </section>
 
     <section class="item__reddit" v-if="item.subreddit !== null">
-      <p>| Subreddit: <a :href="item.subreddit_link" target="_blank">${ item.subreddit }</a></p>
+      <p>| Subreddit: <a :href="item.subreddit_link" target="_blank">r/${ item.subreddit }</a></p>
     </section>
 
     <section class="item__content" v-if="item.content !== null">

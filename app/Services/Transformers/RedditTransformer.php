@@ -10,7 +10,7 @@ class RedditTransformer extends TransformerAbstract
       'title'     => $payload->data->title,
       'image'     => null,
       'content'   => null,
-      'author'    => null,
+      'author'    => $payload->data->author,
       'link'      => 'https://reddit.com' . $payload->data->permalink,
       'subreddit' => $payload->data->subreddit,
       'subreddit_link' => 'https://reddit.com/' . $payload->data->subreddit_name_prefixed,
