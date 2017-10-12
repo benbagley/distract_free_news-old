@@ -150,6 +150,12 @@ nav .bbcnews:hover { background: #B31718; }
 nav .reddit.active,
 nav .reddit:hover { background: #C7DFF7; }
 
+nav .polygon.active,
+nav .polygon:hover {
+  background: #ff0052;
+  background: -webkit-linear-gradient(right, #ff0052, #8e2b88);
+}
+
 nav .settings.active,
 nav .settings:hover { background: #DCE1E5; }
 

@@ -26,7 +26,8 @@ var app = new Vue({
     LadBible: true,
     HackerNews: true,
     Reddit: true,
-    ProductHunt: true
+    ProductHunt: true,
+    Polygon: false
   },
   persist: [
     "BBCNews",
@@ -36,7 +37,8 @@ var app = new Vue({
     "LadBible",
     "HackerNews",
     "Reddit",
-    "ProductHunt"
+    "ProductHunt",
+    "Polygon"
   ],
   methods: {
     load (service) {
