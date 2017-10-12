@@ -26,4 +26,32 @@
       <p>${ item.content }</p>
     </section>
   </section> <!-- end vue -->
+
+  <transition name="fade">
+    <section class="modal" v-show="settings_modal">
+      <section class="modal-message">
+        <section class="modal-header">
+          <h4>Settings</h4>
+        </section>
+
+        <section class="modal-body">
+          <section class="column">
+            <label><input type="checkbox" class="checked" v-model="BBCNews"><span>BBC News</span></label>
+            <label><input type="checkbox" class="checked" v-model="BBCSport"><span>BBC Sport</span></label>
+            <label><input type="checkbox" class="checked" v-model="TheTelegraph"><span>The Telegraph</span></label>
+            <label><input type="checkbox" class="checked" v-model="TheIndependent"><span>The Independent</span></label>
+          </section>
+
+          <section class="column">
+            <label><input type="checkbox" class="checked" v-model="LadBible"><span>Lad Bible</span></label>
+            <label><input type="checkbox" class="checked" v-model="HackerNews"><span>Hacker News</span></label>
+            <label><input type="checkbox" class="checked" v-model="Reddit"><span>Reddit</span></label>
+            <label><input type="checkbox" class="checked" v-model="ProductHunt"><span>Product Hunt</span></label>
+          </section>
+
+          <a class="modal-exit" v-on:click="settings_modal=!settings_modal">Close</a>
+        </section>
+      </section>
+    </section>
+  </transition>
 {% endblock %}

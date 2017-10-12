@@ -8,13 +8,36 @@ Vue.filter('truncate', function(value, length) {
   return value.substring(0, length) + '...';
 });
 
+Vue.use(VuePersist)
+
 var app = new Vue({
   el: '#app',
   delimiters: ['${', '}'],
   data: {
     items: [],
-    loading: false
+    loading: false,
+    settings_modal: false,
+
+    // Service buttons
+    BBCNews: true,
+    BBCSport: true,
+    TheTelegraph: true,
+    TheIndependent: true,
+    LadBible: true,
+    HackerNews: true,
+    Reddit: true,
+    ProductHunt: true
   },
+  persist: [
+    "BBCNews",
+    "BBCSport",
+    "TheTelegraph",
+    "TheIndependent",
+    "LadBible",
+    "HackerNews",
+    "Reddit",
+    "ProductHunt"
+  ],
   methods: {
     load (service) {
       this.loading = true,

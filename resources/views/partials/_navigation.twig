@@ -8,13 +8,15 @@
   </section>
 
   <section class="mobile-nav">
-    <a href="#" @click.prevent="load('bbcnews')" class="bbcnews active">BBC News</a>
-    <a href="#" @click.prevent="load('bbcsport')" class="bbcsport">BBC Sport</a>
-    <a href="#" @click.prevent="load('thetelegraph')" class="thetelegraph">The Telegraph</a>
-    <a href="#" @click.prevent="load('theindependent')" class="theindependent">The Independent</a>
-    <a href="#" @click.prevent="load('ladbible')" class="ladbible">Lad Bible</a>
-    <a href="#" @click.prevent="load('hackernews')" class="hackernews">Hacker News</a>
-    <a href="#" @click.prevent="load('reddit')" class="reddit">Reddit r/all</a>
-    <a href="#" @click.prevent="load('producthunt')" class="producthunt">Product Hunt</a>
+    <a href="#" @click.prevent="load('bbcnews')" v-show="BBCNews" class="bbcnews active">BBC News</a>
+    <a href="#" @click.prevent="load('bbcsport')" v-show="BBCSport" class="bbcsport">BBC Sport</a>
+    <a href="#" @click.prevent="load('thetelegraph')" v-show="TheTelegraph" class="thetelegraph">The Telegraph</a>
+    <a href="#" @click.prevent="load('theindependent')" v-show="TheIndependent" class="theindependent">The Independent</a>
+    <a href="#" @click.prevent="load('ladbible')" v-show="LadBible" class="ladbible">Lad Bible</a>
+    <a href="#" @click.prevent="load('hackernews')" v-show="HackerNews" class="hackernews">Hacker News</a>
+    <a href="#" @click.prevent="load('reddit')" v-show="Reddit" class="reddit">Reddit r/all</a>
+    <a href="#" @click.prevent="load('producthunt')" v-show="ProductHunt" class="producthunt">Product Hunt</a>
+    <hr class="nav-break">
+    <a href="#" v-on:click="settings_modal=!settings_modal" class="settings">Settings</a>
   </section>
 </nav>
