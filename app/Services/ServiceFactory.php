@@ -13,6 +13,7 @@ use App\Services\Transformers\TheTelegraphTransformer;
 use App\Services\Transformers\TheIndependentTransformer;
 use App\Services\Transformers\LadBibleTransformer;
 use App\Services\Transformers\PolygonTransformer;
+use App\Services\Transformers\TheNextWebTransformer;
 use GuzzleHttp\Client as Guzzle;
 
 class ServiceFactory
@@ -29,7 +30,8 @@ class ServiceFactory
     'thetelegraph',
     'theindependent',
     'ladbible',
-    'polygon'
+    'polygon',
+    'thenextweb'
   ];
 
   public function __construct(Guzzle $client, RedisAdapter $cache)
@@ -128,6 +130,15 @@ class ServiceFactory
     });
 
     return (new PolygonTransformer(json_decode($data)))->create();
+  }
+
+  protected function thenextweb($limit = 20)
+  {
+    $data = $this->cache->remember('thenextweb', 10, function () use ($limit) {
+      return json_encode($data = (new TheNextWeb($this->client))->get($limit));
+    });
+
+    return (new TheNextWebTransformer(json_decode($data)))->create();
   }
 
   protected function serviceIsEnabled($service)

@@ -156,6 +156,12 @@ nav .polygon:hover {
   background: -webkit-linear-gradient(right, #ff0052, #8e2b88);
 }
 
+nav .thenextweb.active,
+nav .thenextweb:hover {
+  background-color: #F42;
+  background: linear-gradient(to bottom right, #c09, #f42 85%);
+}
+
 nav .settings.active,
 nav .settings:hover { background: #DCE1E5; }
 
